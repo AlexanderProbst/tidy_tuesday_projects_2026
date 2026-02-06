@@ -25,6 +25,8 @@ This report analyzes linguistic diversity across Africa using TidyTuesday data o
 
 **Note on Data Structure**: Each row represents a language spoken in a specific country. Languages spoken in multiple countries appear multiple times in the dataset, which allows us to analyze cross-border linguistic connections.
 
+**Note on Speaker Counts**: The `native_speakers` column captures **first-language (L1) speakers only**. This significantly underrepresents languages that serve as lingua francas — for example, Swahili has ~5.3 million native speakers in this dataset, but is estimated to have 100–150 million total speakers when including second-language (L2) use. Similarly, Arabic and other trade/regional languages will appear smaller than their true communicative reach. All speaker counts in this report should be interpreted with this caveat in mind.
+
 Key findings include:
 
 - **Extreme linguistic diversity**: Niger-Congo family dominates with 279 languages
@@ -132,7 +134,7 @@ ggplot(top_languages, aes(x = reorder(language, total_speakers), y = total_speak
   theme(legend.position = "none")
 ```
 
-**Key Finding**: Arabic dominates with 150 million speakers, followed by Hausa (85M) and Swahili (53M). The top 10 languages account for **`r concentration_pct`%** of all speakers, showing significant concentration despite high linguistic diversity.
+**Key Finding**: Arabic dominates with 150 million speakers, followed by Hausa (85M) and Swahili (53M). The top 10 languages account for **`r concentration_pct`%** of all speakers, showing significant concentration despite high linguistic diversity. Note that these figures reflect **native (L1) speakers only** — languages like Swahili, which serve as a lingua franca across East Africa with over 100 million L2 speakers, are significantly underrepresented by this measure.
 
 ---
 
